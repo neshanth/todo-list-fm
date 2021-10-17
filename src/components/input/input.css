@@ -1,0 +1,44 @@
+.todo-input-container {
+  position: relative;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 1em;
+}
+
+.todo-radio-submit {
+  position: absolute;
+  transform: scale(2);
+  top: 15px;
+  left: 15px;
+}
+
+.check-icon {
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  display: none;
+}
+
+.todo-radio-submit[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  transform: scale(2);
+  top: 18px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid hsl(233, 11%, 84%);
+}
+
+.todo-radio-submit[type="radio"]:checked {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+/* Input */
+.todo-input {
+  padding-left: 4em;
+}
