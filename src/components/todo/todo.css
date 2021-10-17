@@ -35,3 +35,7 @@
 .clickable {
   cursor: pointer;
 }
+.delete-btn {
+  background: none;
+  border: none;
+}

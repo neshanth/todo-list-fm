@@ -4,14 +4,19 @@ import Information from "../information/Information";
 import Todo from "../todo/Todo";
 import "./todocontainer.css";
 
-function TodoContainer({ todos, changeStatus }) {
+function TodoContainer({ todos, changeStatus, deleteTodo, todosCount }) {
   return (
     <>
       <div className="todo-container">
         {todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} changeStatus={changeStatus} />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            changeStatus={changeStatus}
+            deleteTodo={deleteTodo}
+          />
         ))}
-        <Information />
+        <Information todosCount={todosCount} />
       </div>
       <div className="filters-container">
         <Filters />

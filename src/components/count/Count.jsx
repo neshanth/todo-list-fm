@@ -1,10 +1,10 @@
 import React from "react";
 import "./count.css";
 
-function Count() {
+function Count({ todosCount }) {
   return (
     <div className="todolist-info">
-      <p className="todo-count">5 items left</p>
+      <p className="todo-count">{todosCount} items left</p>
     </div>
   );
 }

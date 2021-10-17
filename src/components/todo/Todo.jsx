@@ -2,7 +2,7 @@ import React from "react";
 import Cross from "../cross/Cross";
 import "./todo.css";
 
-function Todo({ todo, changeStatus }) {
+function Todo({ todo, changeStatus, deleteTodo }) {
   const { id, completed } = todo;
   return (
     <div className="todo">
@@ -13,7 +13,7 @@ function Todo({ todo, changeStatus }) {
         onChange={(e) => changeStatus(id)}
       />
       <p className={`todo-text ${completed ? "completed" : ""}`}>{todo.todo}</p>
-      <button className="clickable">
+      <button className="clickable delete-btn" onClick={() => deleteTodo(id)}>
         <Cross />
       </button>
     </div>

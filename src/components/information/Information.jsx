@@ -3,10 +3,10 @@ import Clear from "../button/Clear";
 import Count from "../count/Count";
 import "./information.css";
 
-function Information() {
+function Information({ todosCount }) {
   return (
     <div className="information-container">
-      <Count />
+      <Count todosCount={todosCount} />
       <Clear />
     </div>
   );
