@@ -4,7 +4,7 @@ import Moon from "../moon/Moon";
 import TodoContainer from "../todocontainer/TodoContainer";
 import "./header.css";
 
-function Header() {
+function Header({ todoInput, changeTodoInput, addTodo, todos, changeStatus }) {
   return (
     <header className="header-banner">
       <div className="container">
@@ -13,8 +13,12 @@ function Header() {
           <Moon />
         </div>
 
-        <Input />
-        <TodoContainer />
+        <Input
+          todoInput={todoInput}
+          changeTodoInput={changeTodoInput}
+          addTodo={addTodo}
+        />
+        <TodoContainer todos={todos} changeStatus={changeStatus} />
       </div>
     </header>
   );

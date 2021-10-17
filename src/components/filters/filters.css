@@ -1,0 +1,10 @@
+.filters a {
+  color: hsl(236, 9%, 61%);
+  font-weight: 700;
+  margin: 0 1em;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+}

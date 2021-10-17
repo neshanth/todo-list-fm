@@ -1,11 +1,12 @@
 import React from "react";
+import "./filters.css";
 
 function Filters() {
   return (
-    <div>
+    <div className="filters">
       <a href="#">All</a>
-      <a href="#">All</a>
-      <a href="#">All</a>
+      <a href="#">Active</a>
+      <a href="#">Completed</a>
     </div>
   );
 }

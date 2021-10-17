@@ -1,0 +1,13 @@
+.todo-container {
+  margin: 1em 0;
+  border-radius: 5px;
+}
+.filters-container,
+.todo-container {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.filters-container {
+  padding: 1em;
+  border-radius: 5px;
+}

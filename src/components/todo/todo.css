@@ -1,0 +1,37 @@
+.todo-check[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  transform: scale(2);
+  top: 20px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid hsl(233, 11%, 84%);
+}
+
+.todo-check[type="checkbox"]:checked {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.todo {
+  position: relative;
+  display: flex;
+  padding: 1em 1em;
+  border-bottom: 1px solid hsl(236, 33%, 92%);
+}
+
+.todo-text {
+  margin-left: 2em;
+  flex: 1;
+  color: hsl(235, 19%, 35%);
+}
+
+.completed {
+  color: hsl(236, 9%, 61%);
+  text-decoration: line-through;
+}
+.clickable {
+  cursor: pointer;
+}

@@ -1,10 +1,11 @@
 import React from "react";
 import Clear from "../button/Clear";
 import Count from "../count/Count";
+import "./information.css";
 
 function Information() {
   return (
-    <div>
+    <div className="information-container">
       <Count />
       <Clear />
     </div>

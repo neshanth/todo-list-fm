@@ -1,0 +1,6 @@
+.information-container {
+  padding: 1em;
+  border-bottom: 1px solid hsl(236, 33%, 92%);
+  display: flex;
+  justify-content: space-between;
+}
