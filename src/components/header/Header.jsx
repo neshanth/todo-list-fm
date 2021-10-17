@@ -12,6 +12,7 @@ function Header({
   changeStatus,
   deleteTodo,
   todosCount,
+  clearCompleted,
 }) {
   return (
     <header className="header-banner">
@@ -31,6 +32,7 @@ function Header({
           changeStatus={changeStatus}
           deleteTodo={deleteTodo}
           todosCount={todosCount}
+          clearCompleted={clearCompleted}
         />
       </div>
     </header>

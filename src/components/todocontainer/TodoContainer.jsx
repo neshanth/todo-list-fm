@@ -4,7 +4,13 @@ import Information from "../information/Information";
 import Todo from "../todo/Todo";
 import "./todocontainer.css";
 
-function TodoContainer({ todos, changeStatus, deleteTodo, todosCount }) {
+function TodoContainer({
+  todos,
+  changeStatus,
+  deleteTodo,
+  todosCount,
+  clearCompleted,
+}) {
   return (
     <>
       <div className="todo-container">
@@ -16,7 +22,7 @@ function TodoContainer({ todos, changeStatus, deleteTodo, todosCount }) {
             deleteTodo={deleteTodo}
           />
         ))}
-        <Information todosCount={todosCount} />
+        <Information todosCount={todosCount} clearCompleted={clearCompleted} />
       </div>
       <div className="filters-container">
         <Filters />

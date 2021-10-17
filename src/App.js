@@ -40,6 +40,10 @@ function App() {
       })
     );
   };
+  const clearCompleted = () => {
+    const completedTodos = todos.filter((todo) => todo.completed !== true);
+    setTodos([...completedTodos]);
+  };
   return (
     <>
       <Header
@@ -50,6 +54,7 @@ function App() {
         changeStatus={changeStatus}
         deleteTodo={deleteTodo}
         todosCount={todosCount}
+        clearCompleted={clearCompleted}
       />
     </>
   );

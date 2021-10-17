@@ -1,8 +1,12 @@
 import React from "react";
 import "./clear.css";
 
-function Clear() {
-  return <button className="clear-btn">Clear Completed</button>;
+function Clear({ clearCompleted }) {
+  return (
+    <button className="clear-btn" onClick={clearCompleted}>
+      Clear Completed
+    </button>
+  );
 }
 
 export default Clear;
