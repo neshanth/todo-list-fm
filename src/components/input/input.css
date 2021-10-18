@@ -4,18 +4,11 @@
 
 .todo-input {
   width: 100%;
-  padding: 1.5em;
+  padding: 1.7em;
   padding-left: 4em;
   border: none;
   border-radius: 5px;
   font-family: inherit;
-}
-
-.todo-radio-submit {
-  position: absolute;
-  transform: scale(2);
-  top: 15px;
-  left: 15px;
 }
 
 .check-icon {
@@ -32,15 +25,15 @@
   transform: scale(2);
   top: 22px;
   left: 15px;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 1px solid hsl(233, 11%, 84%);
 }
 
-.todo-radio-submit[type="radio"]:checked {
+/* .todo-radio-submit[type="radio"]:checked {
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-}
+} */
 
 /* Input */
 

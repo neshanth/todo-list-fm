@@ -12,3 +12,11 @@
 .active {
   color: hsl(220, 98%, 61%) !important;
 }
+
+.filter-link:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.filters-container-dark .filters a:hover {
+  color: hsl(234, 39%, 85%);
+}

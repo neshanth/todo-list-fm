@@ -5,14 +5,20 @@
   transform: scale(2);
   top: 20px;
   left: 15px;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 1px solid hsl(233, 11%, 84%);
+  background-position: center;
 }
 
 .todo-check[type="checkbox"]:checked {
-  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-image: url("../../images/icon-check.svg"),
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+}
+.todo-check[type="checkbox"]:hover {
+  border: 1px solid red;
 }
 
 .todo {
