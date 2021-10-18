@@ -22,17 +22,17 @@ function Header({
   return (
     <header
       className={`${
-        window.innerWidth < 780 && data.theme === "Dark"
+        data.isDesktop === false && data.theme === "Dark"
           ? "header-banner-dark-mobile"
           : "header-banner-light-mobile"
       } ${
-        window.innerWidth > 780 && data.theme === "Dark"
+        data.isDesktop && data.theme === "Dark"
           ? "header-banner-dark-desktop"
-          : "header-banner-light-desktop "
+          : "header-banner-light-desktop"
       } header-banner`}
     >
       <div className="container">
-        <div className="logo-container">
+        <div className="logo-container fix-width-container">
           <h2>TODO</h2>
           {data.theme === "Dark" ? <Sun /> : <Moon />}
         </div>

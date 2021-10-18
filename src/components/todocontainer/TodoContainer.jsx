@@ -20,7 +20,7 @@ function TodoContainer({
   return (
     <>
       <div
-        className={`todo-container ${
+        className={`todo-container fix-width-container-todo ${
           darkTodo.theme === "Dark" ? "todo-container-dark" : ""
         } `}
       >

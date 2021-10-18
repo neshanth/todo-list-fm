@@ -4,11 +4,15 @@
 
 .todo-input {
   width: 100%;
-  padding: 1.7em;
+  padding: 1.2em;
   padding-left: 4em;
   border: none;
   border-radius: 5px;
   font-family: inherit;
+  font-size: 17px;
+}
+.todo-input:focus {
+  outline: none;
 }
 
 .check-icon {

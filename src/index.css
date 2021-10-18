@@ -29,3 +29,12 @@ a {
     display: none;
   }
 }
+.fix-width-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.fix-width-container-todo {
+  max-width: 800px;
+  margin: 1em auto !important;
+}

@@ -6,7 +6,7 @@ import { AppContext } from "../../context";
 function Input({ todoInput, changeTodoInput, addTodo }) {
   const darkInput = useContext(AppContext);
   return (
-    <div className="todo-input-container">
+    <div className="todo-input-container fix-width-container">
       <label htmlFor="todo" className="todo-label">
         <input type="radio" name="todo" className="todo-radio-submit" />
         <img className="check-icon" src={check} alt="check" />

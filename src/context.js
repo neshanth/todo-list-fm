@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
 
   const checkIsDesktop = () => {
     let width = window.innerWidth;
-    if (width > 900) {
+    if (width > 780) {
       setIsDesktop(true);
     } else {
       setIsDesktop(false);
