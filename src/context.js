@@ -1,9 +1,25 @@
 import React, { useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState("Light");
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  const checkIsDesktop = () => {
+    let width = window.innerWidth;
+    if (width > 900) {
+      setIsDesktop(true);
+    } else {
+      setIsDesktop(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", checkIsDesktop);
+  }, [isDesktop]);
+
   const changeTheme = () => {
     if (theme === "Dark") {
       setTheme("Light");
@@ -15,7 +31,7 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ theme, changeTheme }}>
+    <AppContext.Provider value={{ theme, changeTheme, isDesktop }}>
       {children}
     </AppContext.Provider>
   );

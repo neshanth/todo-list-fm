@@ -23,3 +23,9 @@ a {
 .clickable {
   cursor: pointer;
 }
+
+@media screen and (min-width: 781px) {
+  .filters-container {
+    display: none;
+  }
+}

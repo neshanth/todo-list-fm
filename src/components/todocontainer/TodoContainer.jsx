@@ -4,6 +4,7 @@ import Information from "../information/Information";
 import Todo from "../todo/Todo";
 import "./todocontainer.css";
 import { AppContext } from "../../context";
+import DesktopInfo from "../desktopinfo/DesktopInfo";
 
 function TodoContainer({
   todos,
@@ -15,6 +16,7 @@ function TodoContainer({
   filters,
 }) {
   const darkTodo = useContext(AppContext);
+
   return (
     <>
       <div
@@ -30,14 +32,27 @@ function TodoContainer({
             deleteTodo={deleteTodo}
           />
         ))}
-        <Information todosCount={todosCount} clearCompleted={clearCompleted} />
+        {darkTodo.isDesktop ? (
+          <DesktopInfo
+            todosCount={todosCount}
+            changeFilter={changeFilter}
+            filters={filters}
+          />
+        ) : (
+          <Information
+            todosCount={todosCount}
+            clearCompleted={clearCompleted}
+          />
+        )}
       </div>
       <div
         className={`filters-container ${
           darkTodo.theme === "Dark" ? "filters-container-dark" : ""
         } `}
       >
-        <Filters changeFilter={changeFilter} filters={filters} />
+        {darkTodo.isDesktop ? null : (
+          <Filters changeFilter={changeFilter} filters={filters} />
+        )}
       </div>
     </>
   );

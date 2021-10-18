@@ -20,7 +20,17 @@ function Header({
 }) {
   const data = useContext(AppContext);
   return (
-    <header className={`header-banner`}>
+    <header
+      className={`${
+        window.innerWidth < 780 && data.theme === "Dark"
+          ? "header-banner-dark-mobile"
+          : "header-banner-light-mobile"
+      } ${
+        window.innerWidth > 780 && data.theme === "Dark"
+          ? "header-banner-dark-desktop"
+          : "header-banner-light-desktop "
+      } header-banner`}
+    >
       <div className="container">
         <div className="logo-container">
           <h2>TODO</h2>

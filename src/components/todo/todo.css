@@ -17,9 +17,6 @@
     linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-repeat: no-repeat;
 }
-.todo-check[type="checkbox"]:hover {
-  border: 1px solid red;
-}
 
 .todo {
   position: relative;
