@@ -2,7 +2,7 @@ import React from "react";
 import Cross from "../cross/Cross";
 import "./todo.css";
 import { AppContext } from "../../context";
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 
 function Todo({ todo, changeStatus, deleteTodo }) {
   const { id, completed } = todo;
