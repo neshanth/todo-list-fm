@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Cross from "../cross/Cross";
 import "./todo.css";
 import { AppContext } from "../../context";
@@ -7,6 +7,7 @@ import { useContext } from "react/cjs/react.development";
 function Todo({ todo, changeStatus, deleteTodo }) {
   const { id, completed } = todo;
   const darkTodo = useContext(AppContext);
+  const radioRef = useRef();
   return (
     <div
       className={`todo ${darkTodo.theme === "Dark" ? "todo-dark-border" : ""}`}
@@ -16,6 +17,7 @@ function Todo({ todo, changeStatus, deleteTodo }) {
         type="checkbox"
         checked={completed}
         onChange={(e) => changeStatus(id)}
+        ref={radioRef}
       />
       <p
         className={`todo-text ${completed ? "completed" : ""} ${

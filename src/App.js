@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 
+const getLocalStorage = () => {
+  let todos = localStorage.getItem("todos");
+  if (todos) {
+    return JSON.parse(localStorage.getItem("todos"));
+  } else {
+    return [];
+  }
+};
+
 function App() {
   const [todoInput, setTodoInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getLocalStorage());
   const [todosCount, setTodosCount] = useState();
+
+  const [filters, setFilters] = useState("All");
 
   useEffect(() => {
     setTodosCount(todos.length);
@@ -44,17 +55,39 @@ function App() {
     const completedTodos = todos.filter((todo) => todo.completed !== true);
     setTodos([...completedTodos]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  // Filtering Logic
+
+  let finalTodos = todos;
+  if (filters === "Active") {
+    finalTodos = finalTodos.filter((final) => final.completed === false);
+  } else if (filters === "Completed") {
+    finalTodos = finalTodos.filter((final) => final.completed === true);
+  } else {
+    finalTodos = todos;
+  }
+
+  const changeFilter = (filterName) => {
+    setFilters(filterName);
+  };
+
   return (
     <>
       <Header
         todoInput={todoInput}
         changeTodoInput={changeTodoInput}
         addTodo={addTodo}
-        todos={todos}
+        todos={finalTodos}
         changeStatus={changeStatus}
         deleteTodo={deleteTodo}
         todosCount={todosCount}
         clearCompleted={clearCompleted}
+        changeFilter={changeFilter}
+        filters={filters}
       />
     </>
   );

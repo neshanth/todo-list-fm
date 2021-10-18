@@ -15,6 +15,8 @@ function Header({
   deleteTodo,
   todosCount,
   clearCompleted,
+  changeFilter,
+  filters,
 }) {
   const data = useContext(AppContext);
   return (
@@ -36,6 +38,8 @@ function Header({
           deleteTodo={deleteTodo}
           todosCount={todosCount}
           clearCompleted={clearCompleted}
+          changeFilter={changeFilter}
+          filters={filters}
         />
       </div>
     </header>

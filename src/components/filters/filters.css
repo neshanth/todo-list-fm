@@ -1,4 +1,4 @@
-.filters a {
+.filters .filter-link {
   color: hsl(236, 9%, 61%);
   font-weight: 700;
   margin: 0 1em;
@@ -7,4 +7,8 @@
 .filters {
   display: flex;
   justify-content: center;
+}
+
+.active {
+  color: hsl(220, 98%, 61%) !important;
 }

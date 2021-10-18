@@ -11,6 +11,8 @@ function TodoContainer({
   deleteTodo,
   todosCount,
   clearCompleted,
+  changeFilter,
+  filters,
 }) {
   const darkTodo = useContext(AppContext);
   return (
@@ -35,7 +37,7 @@ function TodoContainer({
           darkTodo.theme === "Dark" ? "filters-container-dark" : ""
         } `}
       >
-        <Filters />
+        <Filters changeFilter={changeFilter} filters={filters} />
       </div>
     </>
   );
