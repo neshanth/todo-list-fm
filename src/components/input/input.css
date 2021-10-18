@@ -4,7 +4,11 @@
 
 .todo-input {
   width: 100%;
-  padding: 1em;
+  padding: 1.5em;
+  padding-left: 4em;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
 }
 
 .todo-radio-submit {
@@ -26,7 +30,7 @@
   -moz-appearance: none;
   position: absolute;
   transform: scale(2);
-  top: 18px;
+  top: 22px;
   left: 15px;
   width: 10px;
   height: 10px;
@@ -39,6 +43,8 @@
 }
 
 /* Input */
-.todo-input {
-  padding-left: 4em;
+
+.todo-input-dark {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
 }

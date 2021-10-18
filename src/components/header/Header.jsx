@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../input/Input";
 import Moon from "../moon/Moon";
+import Sun from "../sun/Sun";
 import TodoContainer from "../todocontainer/TodoContainer";
 import "./header.css";
+import { AppContext } from "../../context";
 
 function Header({
   todoInput,
@@ -14,12 +16,13 @@ function Header({
   todosCount,
   clearCompleted,
 }) {
+  const data = useContext(AppContext);
   return (
-    <header className="header-banner">
+    <header className={`header-banner`}>
       <div className="container">
         <div className="logo-container">
           <h2>TODO</h2>
-          <Moon />
+          {data.theme === "Dark" ? <Sun /> : <Moon />}
         </div>
 
         <Input

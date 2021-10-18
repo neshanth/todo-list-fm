@@ -11,3 +11,8 @@
   padding: 1em;
   border-radius: 5px;
 }
+
+.filters-container-dark,
+.todo-container-dark {
+  background-color: hsl(235, 24%, 19%);
+}

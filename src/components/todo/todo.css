@@ -32,10 +32,19 @@
   color: hsl(236, 9%, 61%);
   text-decoration: line-through;
 }
-.clickable {
-  cursor: pointer;
-}
-.delete-btn {
+
+.delete-btn,
+.btn {
   background: none;
   border: none;
+}
+
+.todo-dark {
+  color: hsl(234, 39%, 85%);
+}
+.dark-completed {
+  color: hsl(233, 14%, 35%);
+}
+.todo-dark-border {
+  border-bottom: 1px solid hsl(237, 14%, 26%);
 }
