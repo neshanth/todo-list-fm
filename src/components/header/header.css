@@ -30,3 +30,13 @@
 .header-banner-light-desktop {
   background-image: url("../../images/bg-desktop-light.jpg");
 }
+
+.instruction {
+  margin-top: 2em;
+  text-align: center;
+  color: #5e5f77;
+}
+
+.dark-instruction {
+  color: #5e5f77;
+}

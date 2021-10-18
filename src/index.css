@@ -38,3 +38,10 @@ a {
   max-width: 800px;
   margin: 1em auto !important;
 }
+
+.btn {
+  border: 0;
+  background: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 17px;
+}

@@ -51,6 +51,13 @@ function Header({
           changeFilter={changeFilter}
           filters={filters}
         />
+        <p
+          className={`instruction fix-width-container ${
+            data.theme === "Dark" ? "dark-instruction" : ""
+          }`}
+        >
+          Press Enter to Add a Todo Item
+        </p>
       </div>
     </header>
   );
