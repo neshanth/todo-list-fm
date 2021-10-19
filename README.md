@@ -1,6 +1,6 @@
 # Todo-list Front end Mentor Challenge
 
-I built this todo app as part of a front end mentor challenge. This project is built with css flexbox and react. I have used Concepts like Context.
+I built this todo app as part of a front end mentor challenge. This project is built with css flexbox and react. I built this while learning React side by side with a Udemy Course.
 
 ## How to view the website
 
