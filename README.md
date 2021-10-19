@@ -12,3 +12,4 @@ The website can be viewed at : https://todolist-fm.netlify.app/
 2. I learnt about setting max-width and how to prevent the todo app for stretching all the way.
 3. I learnt about Conditional Rendering In React.
 4. I also learnt about the concept of children.
+5. I learnt about how to approach a layout and break it down before applying css.
