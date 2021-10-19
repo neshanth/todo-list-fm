@@ -4,12 +4,12 @@ import Count from "../count/Count";
 import Filters from "../filters/Filters";
 import "./desktopinfo.css";
 
-function DesktopInfo({ todosCount, changeFilter, filters }) {
+function DesktopInfo({ todosCount, changeFilter, filters, clearCompleted }) {
   return (
     <div className="desktop-info-component">
       <Count todosCount={todosCount} />
       <Filters changeFilter={changeFilter} filters={filters} />
-      <Clear />
+      <Clear clearCompleted={clearCompleted} />
     </div>
   );
 }

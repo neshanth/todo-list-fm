@@ -37,6 +37,7 @@ function TodoContainer({
             todosCount={todosCount}
             changeFilter={changeFilter}
             filters={filters}
+            clearCompleted={clearCompleted}
           />
         ) : (
           <Information
