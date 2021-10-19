@@ -16,6 +16,9 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    if (window.innerWidth > 780) {
+      setIsDesktop(true);
+    }
     window.addEventListener("resize", checkIsDesktop);
   }, [isDesktop]);
 
