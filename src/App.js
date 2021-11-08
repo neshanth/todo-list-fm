@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 
-const getLocalStorage = () => {
-  let todos = localStorage.getItem("todos");
-  if (todos) {
-    return JSON.parse(localStorage.getItem("todos"));
-  } else {
-    return [];
-  }
-};
-
-// RadioButton ref
+const URL = "https://murmuring-sierra-02508.herokuapp.com/todos";
 
 function App() {
   const [todoInput, setTodoInput] = useState("");
-  const [todos, setTodos] = useState(getLocalStorage());
+  const [todos, setTodos] = useState([]);
   const [todosCount, setTodosCount] = useState();
   const [filters, setFilters] = useState("All");
+
+  const fetchData = () => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then((res) => {
+        setTodos(res);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   useEffect(() => {
     setTodosCount(todos.length);
@@ -27,47 +30,84 @@ function App() {
   };
   const addTodo = (event) => {
     if (event.key === "Enter" && event.target.value !== "") {
-      const newTodo = {
-        id: Math.random(),
-        todo: event.target.value,
-        completed: false,
-      };
-      setTodos([...todos, newTodo]);
+      fetch(URL, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          TodoItem: event.target.value,
+          Completed: false,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => setTodos([...todos, data]));
 
       setTodoInput("");
     }
   };
   const deleteTodo = (id) => {
-    const filteredTodos = todos.filter((todo) => todo.id !== id);
-    setTodos([...filteredTodos]);
+    fetch(`${URL}/${id}`, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        const filteredTodo = todos.filter((todo) => todo.id !== res.id);
+        setTodos(filteredTodo);
+      });
   };
-  const changeStatus = (id) => {
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, completed: !todo.completed };
-        } else {
-          return todo;
-        }
-      })
-    );
+  const changeStatus = (id, e) => {
+    let completed = false;
+    if (e.target.checked) {
+      completed = true;
+    } else {
+      completed = false;
+    }
+
+    fetch(`${URL}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Completed: completed,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const updatedTodos = todos.map((todo) => {
+          if (todo.id === data.id) {
+            return { ...data, Completed: data.Completed };
+          } else {
+            return todo;
+          }
+        });
+        setTodos([...updatedTodos]);
+      });
   };
   const clearCompleted = () => {
-    const completedTodos = todos.filter((todo) => todo.completed !== true);
-    setTodos([...completedTodos]);
+    const completedTodos = todos.filter((todo) => todo.Completed === true);
+    const inComplete = todos.filter((todo) => todo.Completed === false);
+    completedTodos.forEach((completedTodo) => {
+      fetch(`${URL}/${completedTodo.id}`, {
+        method: "Delete",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setTodos([...inComplete]));
+    });
   };
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  // Filtering Logic
 
   let finalTodos = todos;
   if (filters === "Active") {
-    finalTodos = finalTodos.filter((final) => final.completed === false);
+    finalTodos = finalTodos.filter((final) => final.Completed === false);
   } else if (filters === "Completed") {
-    finalTodos = finalTodos.filter((final) => final.completed === true);
+    finalTodos = finalTodos.filter((final) => final.Completed === true);
   } else {
     finalTodos = todos;
   }

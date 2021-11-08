@@ -5,7 +5,7 @@ import { AppContext } from "../../context";
 import { useContext } from "react";
 
 function Todo({ todo, changeStatus, deleteTodo }) {
-  const { id, completed } = todo;
+  const { id, Completed, TodoItem } = todo;
   const darkTodo = useContext(AppContext);
 
   return (
@@ -15,15 +15,15 @@ function Todo({ todo, changeStatus, deleteTodo }) {
       <input
         className="todo-check"
         type="checkbox"
-        checked={completed}
-        onChange={(e) => changeStatus(id)}
+        checked={Completed}
+        onChange={(e) => changeStatus(id, e)}
       />
       <p
-        className={`todo-text ${completed ? "completed" : ""} ${
+        className={`todo-text ${Completed ? "completed" : ""} ${
           darkTodo.theme === "Dark" ? "todo-dark" : ""
-        } ${darkTodo.theme === "Dark" && completed ? "dark-completed" : ""}`}
+        } ${darkTodo.theme === "Dark" && Completed ? "dark-completed" : ""}`}
       >
-        {todo.todo}
+        {TodoItem}
       </p>
       <button className="clickable delete-btn" onClick={() => deleteTodo(id)}>
         <Cross />
